@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Aclonica';
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #C9FFBF;
+    background: -webkit-linear-gradient(to right, #FFAFBD, #C9FFBF);
+    background: linear-gradient(to right, #FFAFBD, #C9FFBF); 
+    padding: 10px;
+}
+
+.todo_app{
+    width:100%;
+    max-width: 700px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo_app h2{
+    color: black;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo_app h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+#input_box{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+
+#add_btn{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px; 
+}
+
+ol li{
+    list-style: decimal;
+    list-style-position: inside;
+    font-size: 17px;
+    padding: 12px 10px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ol li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(/images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 8px;
+    left: 8px;
+
+}
+
+#num_todo{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ol li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ol li.checked::before{
+    background-image: url(/images/checked.png);
+}
+
+#remove_btn, #up_btn, #down_btn, #edit_btn{
+    top: 5px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    background: none;
+}
+
+#remove_btn{
+    right: 0px;
+}
+
+#up_btn{
+    right: 120px;
+}
+
+#down_btn{
+    right: 80px;
+}
+
+#edit_btn{
+    right: 40px;
+}
+
+#remove_btn:hover, #up_btn:hover, #down_btn:hover, #edit_btn:hover{
+    background: #edeef0;
+}
+
+#trash_btn {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    border: none;
+    background: none;
+    position: absolute;
+    display: flex;
+    padding-left: 300px;
+    padding-top: 20px;
+  }

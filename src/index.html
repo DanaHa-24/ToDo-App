@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'/>
+    <link rel="icon" type="image/png" href="/images/icon.png"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="todo_app">
+            <h2>My ToDo List <img src="/images/icon.png"></h2>
+            <div class="row">
+                <input type="text" id="input_box" placeholder="Add your to do">
+                <button id="add_btn" onclick="addToDo()">Add</button>
+            </div>
+            <ol type="1" id="list_container"></ol>
+            <button id="trash_btn" class="fa fa-trash" onclick="clearAll();"></button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
