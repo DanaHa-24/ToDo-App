@@ -149,8 +149,10 @@ ol li.checked::before{
     line-height: 40px;
     border: none;
     background: none;
+    margin: 0;
     position: absolute;
-    display: flex;
-    padding-left: 300px;
-    padding-top: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 275%);
+    
   }
