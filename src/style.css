@@ -141,7 +141,26 @@ ol li.checked::before{
     background: #edeef0;
 }
 
+#options{
+    position: relative;
+    bottom: -65px;
+    left: 45%;
+    width:fit-content;
+    margin: 0;
+}
+
+#info{
+    position: relative;
+    bottom: -65px;
+    left: 20%;
+    width:fit-content;
+    margin: 0;
+}
+
 #trash_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: 40px;
     font-size: 22px;
@@ -149,10 +168,4 @@ ol li.checked::before{
     line-height: 40px;
     border: none;
     background: none;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 275%);
-    
   }
