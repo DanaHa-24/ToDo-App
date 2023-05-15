@@ -114,6 +114,10 @@ function editTask(item) {
     newInput.focus();
 
     newInput.addEventListener("blur", function(){
+        if(newInput.value.length > 30){
+            alert("You allowed to write maximum 30 chars");
+            return;
+        }
         item.innerHTML = newInput.value;
         createAllBtn(item);
         saveData();
