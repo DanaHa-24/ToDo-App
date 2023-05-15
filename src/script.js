@@ -6,7 +6,7 @@ function addToDo(){
     if(inputBox.value === '')
         alert("You must write something!");
     else if (inputBox.value.length > 30)
-        alert("You allowed to write maximum 30 chars");
+        alert("You are allowed to write 30 characters maximum");
     else{
         let li = document.createElement("li");
         li.innerHTML = inputBox.value;
@@ -115,7 +115,7 @@ function editTask(item) {
 
     newInput.addEventListener("blur", function(){
         if(newInput.value.length > 30){
-            alert("You allowed to write maximum 30 chars");
+            alert("You are allowed to write 30 characters maximum");
             return;
         }
         item.innerHTML = newInput.value;
