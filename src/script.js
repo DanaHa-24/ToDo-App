@@ -13,8 +13,9 @@ function addToDo(){
         listContainer.appendChild(li);
 
         createAllBtn(li);
+        inputBox.value = "";
     }
-    inputBox.value = "";
+    
     saveData();
 }
 
@@ -118,6 +119,8 @@ function editTask(item) {
             alert("You are allowed to write 30 characters maximum");
             return;
         }
+        else if (newInput.value === '')
+            alert("You must write something!");
         item.innerHTML = newInput.value;
         createAllBtn(item);
         saveData();
