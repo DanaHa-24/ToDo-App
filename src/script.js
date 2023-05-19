@@ -12,7 +12,7 @@ function addToDo() {
         msgMaxChars();
     }
     else {
-        errorMessage.textContent = ""; // Clear the error message
+        errorMessage.textContent = ""; 
         const li = document.createElement("li");
         li.innerHTML = inputValue;
         listContainer.appendChild(li);
