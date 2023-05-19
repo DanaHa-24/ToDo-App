@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="container">
-        <div class="todo_app">
+    <div id="app_container" class="container">
+        <div id="todo_app" class="todo_app">
             <h2>My ToDo List <img src="/images/icon.png"></h2>
             <div class="row">
                 <input type="text" id="input_box" placeholder="Add your to do">
                 <button id="add_btn" onclick="addToDo()">Add</button>
             </div>
+            <div id="err_msg"></div>
             <ol type="1" id="list_container"></ol>
             <div id="options">
                 <button id="trash_btn" class="fa fa-trash" onclick="clearAll();"></button>

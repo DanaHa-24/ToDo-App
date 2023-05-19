@@ -1,24 +1,30 @@
 const inputBox = document.getElementById("input_box");
 const listContainer = document.getElementById("list_container");
+const errorMessage = document.getElementById("err_msg"); 
 
-
-function addToDo(){
-    if(inputBox.value === '')
-        alert("You must write something!");
-    else if (inputBox.value.length > 30)
-        alert("You are allowed to write 30 characters maximum");
-    else{
-        let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
+function addToDo() {
+    const inputValue = inputBox.value.trim();
+  
+    if (inputValue === "") {
+        msgInvalidInput();
+    } 
+    else if (inputValue.length > 30) {
+        msgMaxChars();
+    }
+    else {
+        errorMessage.textContent = ""; // Clear the error message
+        const li = document.createElement("li");
+        li.innerHTML = inputValue;
         listContainer.appendChild(li);
 
         createAllBtn(li);
         inputBox.value = "";
     }
-    
+  
     saveData();
-}
-
+  }
+  
+  
 function createAllBtn(li){
         let removeBtn = document.createElement("button");
         removeBtn.setAttribute("id","remove_btn");
@@ -106,25 +112,50 @@ function moveDown(item) {
 }
 
 function editTask(item) {
-    let newInput = document.createElement("input");
-    newInput.value = item.innerText.trim();
-
+    const originalValue = item.innerText.trim();
+    const newInput = document.createElement("input");
+    const todoApp = document.getElementById("todo_app");
+    newInput.value = originalValue;
+  
     item.innerHTML = "";
     item.appendChild(newInput);
+  
+    newInput.focus();    
+    todoApp.style.pointerEvents = "none";
 
-    newInput.focus();
-
-    newInput.addEventListener("blur", function(){
-        if(newInput.value.length > 30){
-            alert("You are allowed to write 30 characters maximum");
-            return;
+    let isEditing = true;
+  
+    newInput.addEventListener("blur", function() {
+      if (isEditing) {
+        const trimmedValue = newInput.value.trim();
+        if (trimmedValue === "") {
+            msgInvalidInput();
+            newInput.focus();
+        } 
+        else if (trimmedValue.length > 30) {
+            msgMaxChars();
+            newInput.focus();
+        } 
+        else {
+            item.innerHTML = trimmedValue;
+            createAllBtn(item);
+            saveData();
+            isEditing = false;
+  
+            todoApp.style.pointerEvents = "auto";
         }
-        else if (newInput.value === '')
-            alert("You must write something!");
-        item.innerHTML = newInput.value;
-        createAllBtn(item);
-        saveData();
+      }
     });
+  }
+  
+function msgInvalidInput(){
+    errorMessage.textContent = "You must write something!";
+    errorMessage.style.color = "red";
+}
+
+function msgMaxChars(){
+    errorMessage.textContent = "You are allowed to write 30 characters maximum";
+    errorMessage.style.color = "red";
 }
 
 showTask();
